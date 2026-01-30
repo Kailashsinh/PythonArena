@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+@layer base {
+  :root {
+
+    
+    --background: 222 47% 6%;
+    --foreground: 210 40% 96%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 47 100% 62%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 211 53% 40%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 30% 14%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 211 53% 40%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 30% 18%;
+    --input: 222 30% 18%;
+    --ring: 47 100% 62%;
+
+    --radius: 0.75rem;
+
+    
+    --python-blue: 211 53% 40%;
+    --python-yellow: 47 100% 62%;
+    --python-blue-glow: 211 70% 50%;
+    --python-yellow-glow: 47 100% 70%;
+    
+    --success: 142 76% 36%;
+    --success-foreground: 142 76% 90%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 38 92% 10%;
+    
+    --editor-bg: 222 47% 5%;
+    --editor-line: 222 30% 12%;
+    --editor-selection: 211 53% 30%;
+
+    --sidebar-background: 222 47% 7%;
+    --sidebar-foreground: 210 40% 90%;
+    --sidebar-primary: 47 100% 62%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 211 53% 40%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 30% 18%;
+    --sidebar-ring: 47 100% 62%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 96%;
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 96%;
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 47 100% 62%;
+    --primary-foreground: 222 47% 6%;
+    --secondary: 211 53% 40%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 222 30% 14%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 211 53% 40%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222 30% 18%;
+    --input: 222 30% 18%;
+    --ring: 47 100% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+}
+
+@layer components {
+  .python-gradient {
+    background: linear-gradient(135deg, hsl(var(--python-blue)) 0%, hsl(var(--python-yellow)) 100%);
+  }
+
+  .python-gradient-text {
+    background: linear-gradient(135deg, hsl(var(--python-blue)) 0%, hsl(var(--python-yellow)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-yellow {
+    box-shadow: 0 0 20px hsl(var(--python-yellow) / 0.3), 
+                0 0 40px hsl(var(--python-yellow) / 0.1);
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 20px hsl(var(--python-blue) / 0.3), 
+                0 0 40px hsl(var(--python-blue) / 0.1);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .card-hover:hover {
+    @apply -translate-y-1;
+    box-shadow: 0 10px 40px hsl(var(--python-blue) / 0.2);
+  }
+
+  .badge-easy {
+    @apply bg-success/20 text-success-foreground border-success/30;
+    color: hsl(var(--success));
+  }
+
+  .badge-medium {
+    @apply bg-warning/20 border-warning/30;
+    color: hsl(var(--warning));
+  }
+
+  .badge-hard {
+    @apply bg-destructive/20 border-destructive/30;
+    color: hsl(var(--destructive));
+  }
+}
