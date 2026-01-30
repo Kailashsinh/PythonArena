@@ -15,7 +15,7 @@ export function Footer() {
           </div>
           
           <p className="text-muted-foreground text-sm flex items-center gap-1">
-            Built with <Heart className="h-4 w-4 text-destructive fill-destructive" /> by{" "}
+            Built by{" "}
             <span className="font-semibold text-foreground">Kailashsinh Rajput</span>
           </p>
           
